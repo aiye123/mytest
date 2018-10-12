@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="myCtrl">
+        <table>
+            <thead><tr>
+                <td>id</td>
+                <td>name</td>
+                <td>age</td>
+            </tr></thead>
+            <tbody ng-repeat="people in peoples">
+                <tr>
+                    <td>1{{people.id}}</td>
+                    <td>{{people.name}}</td>
+                    <td>{{people.age}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="./app01.js"></script>
+</html>

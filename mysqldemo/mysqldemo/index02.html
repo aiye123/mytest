@@ -1,0 +1,35 @@
+
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<style>
+</style>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+var app=angular.module('app',[]); //声明
+app.controller('test',function ($scope,$http){ // $http 是一个用于读取web服务器上数据的服务。
+    $scope.data=[]; // 绑定数据
+    
+    $scope.show=function (){
+        // $http.jsonp(url) 是用于读取服务器数据的函数。
+        $http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+$scope.t1+'&cb=JSON_CALLBACK').success(function (data){
+            //返回的结果赋值给$scope.data
+            $scope.data=data.s;
+        });
+    };
+});
+</script>
+</head>
+
+<body ng-controller="test">
+    <div>
+        <!-- 输入内容绑定为t1 ，ng-keyup="show()" -->
+        <input type="text" ng-model="t1" ng-keyup="show()" />
+    </div>
+    <ul>
+        <!-- 数据展示 -->
+        <li ng-repeat="item in data">{{item}}</li>
+    </ul>
+</body>
+</html>

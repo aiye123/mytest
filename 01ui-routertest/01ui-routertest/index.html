@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+<script src="../angular.min.js"></script>
+<script src="../angular-ui-router.js"></script>
+<script src="app.js"></script>
+<script src="c1controller.js"></script>
+<style type="text/css">
+.top{
+    height: 140px;
+    background-color: red;
+}
+.left{
+    height: 150px;
+    width: 50%;
+    float: left;
+    background-color:burlywood;
+    text-align: center;
+    font-size: 20px
+
+}
+.right{
+    height: 150px;
+    background-color: gray;
+}
+</style>
+</head>
+<body ng-app='myapp' ng-controller="myctrl">
+    <div class='top'>index界面</div>
+    <div class="left">路由区
+    <div>
+        <a ui-sref='c1'>c1</a></br>
+        <a ui-sref='c2'>c2</a></br>
+        <a ui-sref='c3'>c3</a></br>
+        <a ui-sref='b'>b</a>
+    </div>
+    </div>
+    <div class="right">界面区
+        <ui-view>
+        <div ui-view="A" style="width: 50%; background-color:red;"></div>
+        <div ui-view="B" style="width: 50%;background-color: #000000;"></div>
+        </ui-view>
+    </div>
+</body>
+</html>
