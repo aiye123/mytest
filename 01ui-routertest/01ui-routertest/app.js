@@ -40,7 +40,7 @@ app.config(function ($stateProvider) {
 
 })
 app.controller('myctrl', function () {
-    return alert('hello!');
+    return alert('hello123!');
 })
 app.run(function ($state) {
     $state.go("c1");
